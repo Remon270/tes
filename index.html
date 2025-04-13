@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALT OS - [Custom ROM]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #161A1D;
+      --text-color: #edf2f4;
+      --primary-color: #f54571;
+      --prim-color: #ff8a2b;
+      --bg-color: #ffe9e9;
+      --accent-color: #ef233c;
+      --button-bg: #f54571;
+      --button-hover: #2c2c2c;
+      --button1-bg: #ff8a2b;
+      --button1-hover: #2c2c2c;
+      
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: fadeIn 5s infinite;
+    }
+
+    header h1 {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    nav a {
+      color: var(--text-color);
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 2rem;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      color: #b0b0b0;
+    }
+
+    .btn-download {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background-color: var(--button-bg);
+      color: var(--text-color);
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      box-shadow: 0 0 8px transparent;
+    }
+
+    .btn-download:hover {
+      background-color: var(--primary-color);
+      color: #fff;
+      box-shadow: 0 0 12px var(--primary-color), 0 0 24px var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .btn-download1 {
+      margin-top: 2rem;
+      padding: 0.75rem 2rem;
+      background-color: var(--button1-bg);
+      color: var(--text-color);
+      border: 2px solid var(--prim-color);
+      border-radius: 82px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 600;
+      box-shadow: 0 0 8px transparent;
+    }
+
+    .btn-download1:hover {
+      background-color: var(--prim-color);
+      color: #fff;
+      box-shadow: 0 0 12px var(--prim-color), 0 0 24px var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      text-align: left;
+    }
+
+    .section1 {
+      padding: 1rem 1rem;
+      margin-top: auto;
+      text-align: left;
+      color: var(--primary-color)
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .section h5 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .section h4 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .section p {
+      max-width: 700px;
+      margin: 0 left;
+      color: #b0b0b0;
+    }
+
+    .section p1 {
+      max-width: 500px;
+      padding: 1rem; 
+      color: #b0b0b0;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    @media (min-width: 768px) {
+      .hero h2 {
+        font-size: 3rem;
+      }
+
+      .section h3 {
+        font-size: 2.5rem;
+      }
+      .section h4 {
+        font-size: 1.5rem;
+      }
+
+      @keyframes fadeInOut {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+    }
+  </style>
+</head>
+<body>
+<header style="
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeInOut 3s infinite ease-in-out;">
+  <h1 style="color: var(--primary-color);">⊹ ALT OS</h1>
+</header>
+
+<button id="scrollToTopBtn"
+  onclick="scrollToTopWithAura()"
+  style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: #ef233c;
+    color: white;
+    border: none;
+    padding: 10px 17px;
+    border-radius: 25%;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.4s ease, box-shadow 0.3s ease;
+    pointer-events: none;
+  ">
+  ⬆
+</button>
+
+<script>
+  const btn = document.getElementById('scrollToTopBtn');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > window.innerHeight / 2) {
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+    } else {
+      btn.style.opacity = '0';
+      btn.style.pointerEvents = 'none';
+    }
+  });
+
+  function scrollToTopWithAura() {
+    btn.style.boxShadow = '0 0 20px 8px #ff3399aa';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      btn.style.boxShadow = 'none';
+    }, 600);
+  }
+</script>
+
+
+
+<div style="position: fixed; top: 1rem; right: 1rem; z-index: 9999;" id="dropdownContainer">
+  <button 
+    onclick="toggleMenu()" 
+    style="
+      font-size: 1.5rem;
+      background-color: #f54571;
+      border: 2px solid #ef233c;
+      color: white;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      box-shadow: 0 0 10px rgba(239, 35, 60, 0.6);
+      transition: 0.3s;
+    "
+    onmouseover="this.style.boxShadow='0 0 15px #f54571'"
+    onmouseout="this.style.boxShadow='0 0 10px rgba(239, 35, 60, 0.6)'">≡</button>
+
+  <div id="menu" 
+    style="display: none; position: absolute; right: 0; top: 3.2rem; background-color: #2c2c2c; border: 2px solid #f54571; border-radius: 30px; padding: 1rem; min-width: 250px; box-shadow: 0 0 15px rgba(239, 35, 60, 0.6);">
+
+    <a href="https://wa.me/6282226174850"
+   style="display: block; color: #ffffff; padding: 0.5rem 1rem; text-decoration: none; border-radius: 15px; transition: 0.3s;"
+   onmouseover="this.style.backgroundColor='#f54571'"
+   onmouseout="this.style.backgroundColor=''">
+  <strong>Developer Contact</strong>
+</a>
+
+    <a href="team.html"
+       style="display: block; color: #ffffff; padding: 0.5rem 1rem; text-decoration: none; border-radius: 15px; transition: 0.3s;"
+       onmouseover="this.style.backgroundColor='#f54571'"
+       onmouseout="this.style.backgroundColor=''">
+      <strong>Team</strong>
+    </a>
+
+    <a href="https://t.me/altosrem"
+       style="display: block; color: #ffffff; padding: 0.5rem 1rem; text-decoration: none; border-radius: 15px; transition: 0.3s;"
+       onmouseover="this.style.backgroundColor='#f54571'"
+       onmouseout="this.style.backgroundColor=''">
+      <strong>Community</strong>
+    </a>
+
+    <a href="about.html"
+    style="display: block; color: #ffffff; padding: 0.5rem 1rem; text-decoration: none; border-radius: 15px; transition: 0.3s;"
+    onmouseover="this.style.backgroundColor='#f54571'"
+    onmouseout="this.style.backgroundColor=''">
+    <strong>About</strong>
+  </a>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+<script>
+  const menu = document.getElementById("menu");
+  const container = document.getElementById("dropdownContainer");
+
+  function toggleMenu() {
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  document.addEventListener("click", function (event) {
+    if (!container.contains(event.target)) {
+      menu.style.display = "none";
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    menu.style.display = "none";
+  });
+</script>
+
+  <section class="section1" id="about">
+    <h3>Open Source Project (AOSP)</h3>
+  </section>
+
+  <section class="hero">
+    <h2>Minimal. Fast. Clean.</h2>
+    <p>ALT OS is a custom ROM based on AOSP, made for those who want clean UI, smooth experience, and essential features — without the clutter.</p>
+    <a href="https://drive.google.com/drive/folders/1FzBNK8y35toiJkeN_S8AZD4DVxpX-DUN?usp=drive_link" 
+       class="btn-download" target="_blank">⬇ Download ALT OS</a>
+  </section>
+
+  <section style="background-color: #1e1e1e; border-radius: 12px; padding: 1.5rem; margin: 2rem auto; max-width: 800px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border: 1px solid #2c2c2c;
+  background-image: 
+    linear-gradient(#2a2a2a 1px, transparent 1px), 
+    linear-gradient(90deg, #2a2a2a 1px, transparent 1px);
+  background-size: 10px 50px;">
+  <h3 style="color: #ffcc00; font-size: 1.5rem; margin-bottom: 1rem;">🚨 Latest announcement!</h3>
+  <p style="color: #e0e0e0; margin-bottom: 1rem;">
+    Hey, hot news!<br>
+    The latest build of ALT OS has gone up to Android 15! For officially supported devices, the stable build is already available first on Patreon/BMC.<br>
+    So what about Android 14? There is still one last build, version v4.9, released in February 2025 (with the latest security patch), but it can only be requested. Because we will be fully focused on Android 15!
+  </p>
+    <a href="https://patreon.com/RemonAZ"
+    style="display: inline-block; padding: 0.7rem 1.2rem; background-color: #1e1e1e; color: #f96854 ; font-weight: bold; text-decoration: none; border-radius: 8px; border: 2px solid #f96854 ; transition: all 0.3s ease;"
+  onmouseover="this.style.boxShadow='0 0 10px #f96854 , 0 0 25px #f96854 '; this.style.backgroundColor='#f96854 '; this.style.color='#1e1e1e';"
+  onmouseout="this.style.boxShadow='none'; this.style.backgroundColor='#1e1e1e'; this.style.color='#f96854 ';"
+  class="btn-download" target="_blank">✨ Go to Patreon!</a>
+  </section>
+
+  <section class="section" id="features" style="text-align: right;">
+    <h5>Main Features</h5>
+    <p1>• Based on latest AOSP  • Lightweight and bloat-free  • Improved battery life<br>
+       • Project Elixir inspired design  • Regular updates  • Security-focused build</p1>
+  </section>
+
+ <section class="section" id="about">
+    <h3>⊀ Unleash Innovation ⊁</h3>
+    <p>Redefine Simplicity with your  android experience on our minimalistic custom rom — where sleek design meets robust security, performance, and stability. Elevate your user interface with minimalist design and with the striking of perfect balanced customization options, customize with ease.</p>
+  </section>
+  
+  <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 1rem;">
+    <header1 style="text-align: center; margin-bottom: 10rem;">
+      <h2 style="font-size: 2.5rem; color: #fff;">
+        Features that makes AOSP <span style="color: #ef233c;">exciting</span>
+      </h2>
+    </header1>
+  
+    <section style="
+      background-color: #ffffff;
+      border: 1px solid #f54571;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    ">
+      <div class="image-container" style="flex: 0 0 250px;">
+        <img src="lock_screen_mockup.jpg" alt="Lock Screen Mockup" style="
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        " />
+      </div>
+  
+      <div class="feature-text" style="flex: 1;">
+        <h2 style="color: #ef233c; margin-bottom: 1rem;">iOS Inspired Automated Depth Clocks</h2>
+  
+        <p style="color: #000000; line-height: 1.6;">
+          Depth Effect ensures a small part of the wallpaper subject appears behind the Lock Screen clock, creating a nice visual style. It makes it look like the wallpaper has depth by placing the clock in front of the image's foreground.
+        </p>
+        <p style="color: #000000; line-height: 1.6; margin-top: 1rem;">
+          The subject of the photo needs to be cut out for the wallpaper to be placed in front of the clock. 
+          <strong style="color: #f54571;">We are the 2st ROM to introduce automated depth clocks just like iOS [after Project Elixir].</strong> 
+          Our implementation provides you automatic depth clock without any hassle to set subject separately. It is well defined and polished in terms of animation as well as notification. 
+          You can set any depth wallpaper you want just make sure to use proper wallpaper to get the best results.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <section style="
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 1.5rem;
+  margin: 2rem left;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  border: 1px solid #2c2c2c;
+  background-image: url('https://projectelixiros.com/assets/images/feature2_img.webp');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 250px;">
+  <h3 style="color: #ef233c; font-size: 1.5rem; margin-bottom: 1rem;">Focus on Security and Privacy!</h3>
+  <p style="color: #272525; margin-bottom: 1rem;">
+    Your privacy is a priority. From Face Unlock, App Lock,<br> Scramble PIN, Selinux Enforcing, Quick Tile Protection, to<br> “Trust” system warnings, it’s all there. Plus,<br> we provide regular security updates every month.</p>
+  </section>
+
+  <section style="color: #f54571; font-size: 1rem; margin-top: 10rem; margin-bottom: 8rem; text-align: center;">
+    <strong>
+      Kamu punya ide keren atau keahlian yang ingin dibagikan? <br>
+      <a href="https://t.me/altosrem" style="color: #ef233c; text-decoration: underline;">
+        Bergabunglah sebagai kontributor!
+      </a> <br>
+      Kami sangat membutuhkan bantuanmu untuk membuat proyek ini semakin berkembang!
+    </strong>
+  </section>
+   
+
+  <footer>
+    <p1>Made by Remon</p1>
+    <p>2025 <strong style="color: #f54571;">ALT OS.</strong> All Rights Reserved.</p>
+    <p>Any trademarks or images used on this site are property of their respective owners</p>
+  </footer>
+</body>
+</html>
+
+
