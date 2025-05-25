@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Remon — Portofolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9fb;
+      color: #222;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.25); /* transparan putih */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* bayangan halus */
+  backdrop-filter: blur(10px); /* blur latar belakang */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* garis bawah halus */
+  padding: 1.2em 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  border-radius: 0 0 12px 12px; /* opsional, biar bawahnya agak rounded */
+}
+
+
+    .logo {
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    .menu-toggle {
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+.menu-dropdown {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateX(-20px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+.menu-dropdown a {
+  color: #fff;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+}
+
+
+    .menu-dropdown.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .menu-dropdown a {
+      padding: 0.75em 1.5em;
+      color: #333;
+      font-size: 0.95em;
+      transition: background 0.2s;
+    }
+
+    .menu-dropdown a:hover {
+      background-color: #f5f5f5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 8em auto 2em auto;
+      background: white;
+      padding: 2.5em;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+    }
+
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 1em;
+      color: #333;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 1em;
+      color: #333;
+    }
+
+    h3 {
+      font-size: 1.3em;
+      text-align: center;
+      margin-bottom: 1em;
+      color: #333;
+    }
+
+    .card {
+      font-size: 1.em;
+      text-align: center;
+      margin-bottom: 1em;
+      color: #333;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1.05em;
+      color: #444;
+    }
+
+    .hero {
+  height: 100vh;
+  background-image: url('3.png');
+    background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+}
+
+   .hero1 {
+  height: 1vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: em;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #555;
+  max-width: 600px;
+}
+
+.btn-utama {
+  margin-top: 1.5em;
+  padding: 0.8em 1.6em;
+  background: #111;
+  color: white;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn-utama1 {
+  margin-top: 2em;
+  padding: 0.5em 1.5em;
+  background: #111;
+  color: white;
+  border-radius: 100px;
+  transition: background 0.3s;
+}
+
+.btn-utama:hover {
+  background: #444;
+}
+
+
+    .toggle-lang {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: -2em;
+      margin-bottom: 2em;
+    }
+
+    .toggle-lang button {
+      background: #eee;
+      border: none;
+      border-radius: 6px;
+      padding: 0.4em 1em;
+      margin-left: 0.5em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-lang button:hover {
+      background: #ddd;
+    }
+
+    .lang-content {
+      display: none;
+    }
+
+    .lang-content.active {
+      display: block;
+    }
+
+    .japan {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+  </style>
+  
+</head>
+    <link rel="icon" href="favicon.svg" type="image/x-icon" />
+<body>
+  <header>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="logo">Remon.dev</div>
+    <div class="menu-dropdown" id="menu">
+      <a href="#home">Beranda</a>
+      <a href="https://wa.me/6282226174850" target="_blank">Contact me</a>
+      <a href="website.html" target="_blank">Website Resmi</a>
+      <a href="https://instagram.com/remonmc_" target="_blank">Instagram</a>
+      <a href="new.html" target="_blank">BARU!!</a>
+    </div>
+  </header>
+
+  <section class="hero">
+  <h1>Halo, aku Remon.</h1>
+  <p>Pencipta Kiroshi UI — OS yang ringan, minimalis, dan penuh ketenangan.</p>
+  <a href="aboutme.html" class="btn-utama">Kenali Lebih Dalam</a>
+</section>
+
+
+  <main class="container">
+    <div class="toggle-lang">
+      <button onclick="toggleLanguage('id')">🇮🇩 ID</button>
+      <button onclick="toggleLanguage('jp')">🇯🇵 JP</button>
+    </div>
+
+    <h1>🌸 Perkenalan Diri</h1>
+
+    <div id="lang-id" class="lang-content active">
+      <p>Hai. Aku Remon. Seorang pengembang perangkat lunak yang suka suasana tenang. Aku sedang membangun sistem operasi ringan bernama <strong>Kiroshi UI</strong>. Selain itu, aku suka belajar bahasa Jepang dan punya impian untuk pergi ke Akihabara suatu hari nanti. Salam kenal ya.</p>
+    </div>
+
+    <div id="lang-jp" class="lang-content japan">
+      <p>はじめまして。レモンと申します。静かな雰囲気が好きなソフトウェア開発者です。「<strong>Kiroshi UI</strong>」という軽量なOSを開発中です。日本語を勉強していて、いつか秋葉原に行くのが夢です。よろしくお願いします。</p>
+    </div>
+  </main>
+  <script>
+    function toggleLanguage(lang) {
+      document.getElementById('lang-id').classList.remove('active');
+      document.getElementById('lang-jp').classList.remove('active');
+
+      if (lang === 'id') {
+        document.getElementById('lang-id').classList.add('active');
+      } else {
+        document.getElementById('lang-jp').classList.add('active');
+      }
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+        menu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
